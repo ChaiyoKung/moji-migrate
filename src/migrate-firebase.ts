@@ -51,12 +51,12 @@ async function getFirebaseCategoriesMap(): Promise<Record<string, string>> {
 }
 
 // Get MongoDB categories map
-async function getMongoCategoriesMap(): Promise<Record<string, Types.ObjectId>> {
+async function getMongoCategoriesMap(): Promise<Record<string, string>> {
   const categories = await Category.find({});
 
-  const categoriesMap: Record<string, Types.ObjectId> = {};
+  const categoriesMap: Record<string, string> = {};
   categories.forEach((category) => {
-    categoriesMap[category.name] = category._id as Types.ObjectId;
+    categoriesMap[category.name] = (category._id as Types.ObjectId).toString();
   });
 
   console.log("MongoDB categories map:", categoriesMap);
@@ -118,8 +118,8 @@ export async function migrateTransactions() {
 
         // Create transaction object
         const transaction = {
-          userId: new Types.ObjectId(HARDCODED_USER_ID),
-          accountId: new Types.ObjectId(HARDCODED_ACCOUNT_ID),
+          userId: HARDCODED_USER_ID,
+          accountId: HARDCODED_ACCOUNT_ID,
           categoryId: categoryId,
           type: type,
           amount: amount,
