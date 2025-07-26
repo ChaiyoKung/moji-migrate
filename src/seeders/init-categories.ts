@@ -1,4 +1,3 @@
-import { database } from "../utils/database.js";
 import { Category, type ICategory } from "../models/Category.js";
 
 const categoriesData = [
