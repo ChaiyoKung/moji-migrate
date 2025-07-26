@@ -2,6 +2,12 @@ import admin from "firebase-admin";
 import { Types } from "mongoose";
 import { Category } from "./models/Category";
 import { Transaction } from "./models/Transaction";
+import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 // Initialize Firebase Admin SDK
 // const serviceAccount = require("../serviceAccountKey.json");
@@ -29,7 +35,8 @@ function convertFirebaseDate(firebaseDate: string): Date {
     throw new Error(`Invalid date format: ${firebaseDate}`);
   }
 
-  return new Date(`${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}T17:00:00.000Z`);
+  const formattedDateString = `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+  return dayjs.tz(formattedDateString, "Asia/Bangkok").utc().toDate();
 }
 
 function convertTimestamp(timestamp: number): Date {
@@ -125,7 +132,6 @@ export async function migrateTransactions() {
           amount: amount,
           currency: "THB",
           date: convertFirebaseDate(record.date),
-          note: null,
           createdAt: convertTimestamp(timestampValue),
           updatedAt: convertTimestamp(timestampValue),
         };
