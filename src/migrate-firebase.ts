@@ -29,7 +29,7 @@ function convertFirebaseDate(firebaseDate: string): Date {
     throw new Error(`Invalid date format: ${firebaseDate}`);
   }
 
-  return new Date(`${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}T07:00:00.000Z`);
+  return new Date(`${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}T17:00:00.000Z`);
 }
 
 function convertTimestamp(timestamp: number): Date {
