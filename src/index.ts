@@ -1,4 +1,5 @@
 import { initializeCategories } from "./seeders/init-categories";
+import { migrateTransactions } from "./migrate-firebase";
 import { database } from "./utils/database";
 
 async function main() {
@@ -6,6 +7,7 @@ async function main() {
     await database.connect();
 
     await initializeCategories();
+    await migrateTransactions();
   } catch (error) {
     console.error(error);
     process.exit(1);
