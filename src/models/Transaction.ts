@@ -1,9 +1,9 @@
-import { Schema, model, Document } from "mongoose";
+import { Schema, model, Document, Types } from "mongoose";
 
 export interface ITransaction extends Document {
-  userId: string;
-  accountId: string;
-  categoryId: string;
+  userId: Types.ObjectId;
+  accountId: Types.ObjectId;
+  categoryId: Types.ObjectId;
   type: string;
   amount: number;
   currency: string;
@@ -16,17 +16,17 @@ export interface ITransaction extends Document {
 const TransactionSchema = new Schema<ITransaction>(
   {
     userId: {
-      type: String,
+      type: Schema.Types.ObjectId,
       required: true,
       ref: "User",
     },
     accountId: {
-      type: String,
+      type: Schema.Types.ObjectId,
       required: true,
       ref: "Account",
     },
     categoryId: {
-      type: String,
+      type: Schema.Types.ObjectId,
       required: true,
       ref: "Category",
     },

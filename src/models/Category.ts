@@ -1,12 +1,12 @@
 import { Schema, model, Document, Types } from "mongoose";
 
 export interface ICategory extends Document {
-  userId: string | null;
+  userId: Types.ObjectId | null;
   name: string;
   type: "income" | "expense";
   icon: string;
   color: string;
-  parentId: string | null;
+  parentId: Types.ObjectId | null;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -14,7 +14,7 @@ export interface ICategory extends Document {
 const CategorySchema = new Schema<ICategory>(
   {
     userId: {
-      type: Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "User",
       default: null,
     },
@@ -33,7 +33,7 @@ const CategorySchema = new Schema<ICategory>(
       type: String,
     },
     parentId: {
-      type: Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "Category",
       default: null,
     },
