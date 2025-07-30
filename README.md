@@ -39,7 +39,7 @@ FIREBASE_DATABASE_URL=https://your_project.firebaseio.com
 ### Run the complete migration:
 
 ```bash
-bun run index.ts
+bun run src/index.ts
 ```
 
 This will:
