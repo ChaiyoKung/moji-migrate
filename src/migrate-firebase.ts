@@ -6,12 +6,12 @@ import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 
+import serviceAccount from "../serviceAccountKey.json";
+
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
 // Initialize Firebase Admin SDK
-// const serviceAccount = require("../serviceAccountKey.json");
-import serviceAccount from "../serviceAccountKey.json";
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount as admin.ServiceAccount),
   databaseURL: process.env.FIREBASE_DATABASE_URL,
