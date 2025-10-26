@@ -17,10 +17,6 @@ admin.initializeApp({
   databaseURL: process.env.FIREBASE_DATABASE_URL,
 });
 
-// Constants
-const HARDCODED_USER_ID = "6884ba75731f4706750784b8";
-const HARDCODED_ACCOUNT_ID = "6884ba7f731f4706750784c0";
-
 // Date conversion functions
 function convertFirebaseDate(firebaseDate: string): Date {
   const parts = firebaseDate.split("/");
@@ -125,8 +121,8 @@ export async function migrateTransactions() {
 
         // Create transaction object
         const transaction = {
-          userId: HARDCODED_USER_ID,
-          accountId: HARDCODED_ACCOUNT_ID,
+          userId: process.env.APP_MONGODB_USER_ID!,
+          accountId: process.env.APP_MONGODB_ACCOUNT_ID!,
           categoryId: categoryId,
           type: type,
           amount: amount,
