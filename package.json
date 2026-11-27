@@ -17,6 +17,7 @@
   },
   "overrides": {
     "protobufjs": "7.6.6",
-    "websocket-driver": "0.8.1"
+    "websocket-driver": "0.8.1",
+    "fast-xml-parser": "4.5.7"
   }
 }
