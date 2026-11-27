@@ -26,6 +26,7 @@
     "jws": "4.0.1",
     "jsonwebtoken": {
       "jws": "3.2.3"
-    }
+    },
+    "@tootallnate/once": "2.0.1"
   }
 }
