@@ -19,6 +19,7 @@
     },
   },
   "overrides": {
+    "@fastify/busboy": "3.2.6",
     "@grpc/grpc-js": "1.14.7",
     "fast-xml-parser": "4.5.7",
     "node-forge": "1.4.4",
@@ -26,7 +27,7 @@
     "websocket-driver": "0.8.1",
   },
   "packages": {
-    "@fastify/busboy": ["@fastify/busboy@3.1.1", "", {}, "sha512-5DGmA8FTdB2XbDeEwc/5ZXBl6UbBAyBOOLlPuBnZ/N1SwdH9Ii+cOX3tBROlDgcTXxjOYnLMVoKk9+FXAw0CJw=="],
+    "@fastify/busboy": ["@fastify/busboy@3.2.6", "", {}, "sha512-UPXdyAMbz/gNvjS8HONpJR2TDaHM3wQKMtSRPFkoh2LTeRRtnm+ICVYKgBYkTwlPOVzDNynOd34EH8qapwfelQ=="],
 
     "@firebase/ai": ["@firebase/ai@2.0.0", "", { "dependencies": { "@firebase/app-check-interop-types": "0.3.3", "@firebase/component": "0.7.0", "@firebase/logger": "0.5.0", "@firebase/util": "1.13.0", "tslib": "^2.1.0" }, "peerDependencies": { "@firebase/app": "0.x", "@firebase/app-types": "0.x" } }, "sha512-N/aSHjqOpU+KkYU3piMkbcuxzvqsOvxflLUXBAkYAPAz8wjE2Ye3BQDgKHEYuhMmEWqj6LFgEBUN8wwc6dfMTw=="],
 
