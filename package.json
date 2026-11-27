@@ -7,12 +7,27 @@
     "dayjs": "^1.11.13",
     "firebase": "^12.0.0",
     "firebase-admin": "^13.4.0",
-    "mongoose": "^8.0.0"
+    "mongoose": "^8.24.11"
   },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "overrides": {
+    "protobufjs": "7.6.6",
+    "websocket-driver": "0.8.1",
+    "fast-xml-parser": "5.12.1",
+    "node-forge": "1.4.4",
+    "@grpc/grpc-js": "1.14.7",
+    "@fastify/busboy": "3.2.6",
+    "form-data": "2.5.6",
+    "jws": "4.0.1",
+    "jsonwebtoken": {
+      "jws": "3.2.3"
+    },
+    "@tootallnate/once": "2.0.1",
+    "uuid": "11.1.1"
   }
 }
